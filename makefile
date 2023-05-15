@@ -1,4 +1,4 @@
-make-run:
+build-run:
 	@echo starting build process...
 	@go build ./main.go
 	@echo build successfull
@@ -19,6 +19,4 @@ build:
 	@echo
 	@echo made by:
 	@cat ./logo.txt
-	@echo
-	@echo
-	@echo run with ./main
+	@sleep 2
