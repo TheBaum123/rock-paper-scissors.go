@@ -7,6 +7,20 @@ import (
 )
 
 func main() {
+	for i := 0; i == 0; {
+		var pq string
+		fmt.Printf("enter p or play to play, anything else to quit: ")
+		fmt.Scanln(&pq)
+		switch pq {
+		case "p", "play":
+			game()
+		default:
+			return
+		}
+	}
+}
+
+func game() {
 	var userChoice int
 	var tempUserChoice string
 	var computerChoice int
@@ -49,4 +63,5 @@ func main() {
 	} else {
 		fmt.Println("you found an edge case. please report it to me. thanks :D")
 	}
+	fmt.Printf("\n\n\n")
 }
