@@ -1,6 +1,8 @@
+BINARY_NAME=rock-paper-scissors-go
+
 build-run:
 	@echo starting build process...
-	@go build ./main.go
+	@go build -o ${BINARY_NAME} ./main.go
 	@echo build successfull
 	@echo
 	@echo made by:
@@ -10,18 +12,16 @@ build-run:
 	@echo launching program...
 	@sleep 1
 	@clear
-	@./main
+	@./${BINARY_NAME}
 
 build:
 	@echo starting build process...
-	@go build ./main.go
+	@go build -o ${BINARY_NAME} ./main.go
 	@echo build successfull
 	@echo
 	@echo made by:
 	@cat ./logo.txt
 	@sleep 2
-
-BINARY_NAME=rock-paper-scissors-go
 
 build-cross-platform:
 	GOARCH=amd64 GOOS=darwin go build -o ${BINARY_NAME}-darwin main.go
@@ -31,7 +31,8 @@ build-cross-platform:
 
 clean:
 	@go clean
-	@rm ${BINARY_NAME}-darwin
-	@rm ${BINARY_NAME}-linux
-	@rm ${BINARY_NAME}-windows
+	@rm -f ${BINARY_NAME}-darwin
+	@rm -f ${BINARY_NAME}-linux
+	@rm -f ${BINARY_NAME}-windows
+	@rm -f ${BINARY_NAME}
 	@echo cleaned successfully
